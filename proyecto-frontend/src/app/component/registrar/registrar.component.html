@@ -1,0 +1,42 @@
+
+<div *ngIf="regio=='acceso'" class="container" style="margin-left: 200px; padding: 90px; color: white;">
+  <div> 
+    <img src="../assets/img/logo2.png" alt="" class="container" style="width: 200px;"><br>
+    <h2>Muchas gracias por inscribierte! Ahora puedes disfrutar de nuestros servicios en codeRefrex, te invitamos a que inicies sesion.</h2>
+  </div>
+</div>
+<section class="container-fluid" *ngIf="regio2==false">
+    <form  id="formulario" class="container" >
+      <img src="../assets/img/logo2.png" alt="" class="container">
+      <div class="container py-3">
+          <div class="row">
+            <h5 class="entre">Primer nombre</h5>
+              <input class="entre control form-control" name="nombre" [(ngModel)]="orden.nombre" [ngModelOptions]="{standalone: true}" type="text form-control" name="" id="usuario" placeholder="Primer nombre"><br>
+              <h5 class="entre">Segundo nombre</h5>
+              <input class="entre control form-control" type="text" name="" [(ngModel)]="orden.segundo_nombre" [ngModelOptions]="{standalone: true}" id="usuario" placeholder="segundo nombre"><br>
+              <h5 class="entre">Primer apellido</h5>
+              <input class="entre control form-control" type="text" name="" [(ngModel)]="orden.apellido" [ngModelOptions]="{standalone: true}" id="usuario" placeholder="primer apellido"><br>
+              <h5 class="entre">Segundo apellido</h5>
+              <input class="entre control form-control" type="text" name="" [(ngModel)]="orden.segundo_apellido" [ngModelOptions]="{standalone: true}" id="usuario" placeholder="segundo apellido"><br>
+              <h5 class="entre">Edad</h5>
+              <input class="entre control form-control" type="number" name=""  id="" placeholder="Edad">
+                <h5 class="entre">Email</h5>
+                <input type="email" placeholder="E-mail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              </div>
+              <h5 class="entre">contraseña</h5>
+              <input class="control form-control" type="password" name="" [(ngModel)]="orden.contrasenia" [ngModelOptions]="{standalone: true}" id="pass" placeholder="contraseña"><br>
+              <h5 class="">Corroborar contraseña</h5>
+              <input class="control form-control" type="password" name="" id="pass" placeholder="contraseña"><br>
+              <h5 class="entre">Fecha de nacimiento</h5>
+              <input class="entre control form-control" type="text" name="" [(ngModel)]="orden.dia" [ngModelOptions]="{standalone: true}" id="" placeholder="dia">
+              <input class="entre control form-control" type="text" name="" [(ngModel)]="orden.mes" [ngModelOptions]="{standalone: true}" id="" placeholder="mes">
+              <input class="entre control form-control" type="text" name="" [(ngModel)]="orden.anio" [ngModelOptions]="{standalone: true}" id="" placeholder="anio">
+              <button class="btn btn-dark entre control button form-control" type="submit" (click)="guardar()">Guardar</button> 
+            </div>
+      
+
+  </form>
+  </section>
+
+  
+  

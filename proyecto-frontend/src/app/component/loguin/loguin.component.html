@@ -1,0 +1,31 @@
+<style>
+    body{
+        background-color: rgba(39, 55, 99, 0.76);
+        margin: 0;
+        height: 100vh;
+       
+    }
+</style>
+<body>
+<div class="container" style="margin-left: 90px;">
+    <div class="row">
+      <section class="container-fluid">
+        <form id="formulario" class="container" >
+          <img src="../assets/img/logo2.png" alt="" class="container">
+          <div class="container py-3">
+              
+                <h5 class="entre">Email</h5>
+                <input type="email" [(ngModel)]="orden.nombre" [ngModelOptions]="{standalone: true}" placeholder="E-mail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                 
+                <h5 class="entre">contraseña</h5>
+                <input class="control form-control"  [(ngModel)]="orden.contrasenia" [ngModelOptions]="{standalone: true}" type="password" name="" id="pass" placeholder="contraseña"><br>
+
+                  <button class="btn btn-dark entre control button form-control" type="submit" (click)="singIn()">Guardar</button> 
+                </div>
+          
+    
+      </form>
+      </section>
+    </div>
+    </div>
+</body>
