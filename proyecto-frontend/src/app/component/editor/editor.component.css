@@ -1,0 +1,40 @@
+
+html,body {background-color: darkgray; margin:0; padding-left: 225px; padding-right: 0px; margin-top: 50px; height:100%; width:100%; overflow: hidden;}
+
+#editor {
+  height: 100%;
+  min-height: 50vh;
+  width: 33%;
+  display: inline-block;
+}
+#editor2 {
+  height: 100%;
+  min-height: 50vh;
+  width: 33%;
+  display: inline-block;
+}
+#editor3 {
+  height: 100%;
+  min-height: 50vh;
+  width: 33%;
+  display: inline-block;
+}
+#container {
+	height:50%;
+	width:auto;
+  white-space : nowrap; 
+  overflow : hidden;
+  position:relative;
+}
+
+#iframe {
+  position: absolute;
+  bottom: 0;
+  width: 70%;
+  height: 40%;
+  padding-top: 45px;
+  padding-right: 0px;
+}
+
+/* disable tag matching */
+.ace_editor .ace_marker-layer .ace_bracket { display: none }

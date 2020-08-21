@@ -2,9 +2,10 @@ var express = require('express');
 var router = express.Router();
 var usuario = require('../models/usuario');
 var mongoose = require('mongoose');
+const  jwt  = require('jsonwebtoken');
 
 
-
+//almacenar usuarios
 router.post('/', function(req, res){
     let u = new usuario(
         {
@@ -12,6 +13,7 @@ router.post('/', function(req, res){
             segundo_nombre: req.body.segundo_nombre,
             apellido: req.body.apellido,
             segundo_apellido: req.body.segundo_apellido,
+            correo:req.body.correo,
             contrasenia: req.body.contrasenia,
             fecha_nacimiento: {
                 dia:req.body.dia,
@@ -23,7 +25,8 @@ router.post('/', function(req, res){
         }
     );
     u.save().then(result=>{
-        res.send(result);
+       const token = jwt.sign({_id: u.id}, 'secretkey')
+       res.status(200).json({token})
         res.end();
     }).catch(error=>{
         res.send(error);
@@ -31,17 +34,6 @@ router.post('/', function(req, res){
     }); 
 });
 
-
-
-router.get('/:id', function(req, res){
-       usuario.find({_id:req.params.id}).then(result=>{
-        res.send(result[0]);
-        res.end();
-    }).catch(error=>{
-        res.send(error);
-        res.end();
-    });
-});
 
 router.get('/', function(req, res){
     usuario.find().then(result=>{
@@ -52,6 +44,7 @@ router.get('/', function(req, res){
         res.end();
     });
 });
+//actuaizacion
 router.put('/:id', function(req, res){
    usuario.update(
        {
@@ -60,7 +53,8 @@ router.put('/:id', function(req, res){
        {
         nombre: req.body.nombre,
         apellido: req.body.apellido,
-        pais: req.body.pais
+        contrasenia: req.body.contrasenia,
+        segundo_apellido: req.body.segundo_apellido
     }
    ).then(result=>{
     res.send(result);
@@ -70,7 +64,7 @@ router.put('/:id', function(req, res){
     res.end();
 });
 });
-
+//eliminacion de usuario
 router.delete('/:id', function(req, res){
     usuario.remove(
         {

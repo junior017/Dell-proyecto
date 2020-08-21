@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { CargarScriptsService } from './cargar-scripts.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -11,6 +11,8 @@ import { RegistrarComponent } from './component/registrar/registrar.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { LoguinComponent } from './component/loguin/loguin.component';
+import { AceEditorModule } from 'ng2-ace-editor';
+import { EditorComponent } from './component/editor/editor.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { LoguinComponent } from './component/loguin/loguin.component';
     HeaderComponent,
     SidebarComponent,
     RegistrarComponent,
-    LoguinComponent
+    LoguinComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,
@@ -26,9 +29,12 @@ import { LoguinComponent } from './component/loguin/loguin.component';
     NgbModule,
     FontAwesomeModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AceEditorModule
   ],
-  providers: [],
+  providers: [
+    CargarScriptsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,21 +6,30 @@
        
     }
 </style>
-<body>
-<div class="container" style="margin-left: 90px;">
+<div  *ngIf="region=='acceso'" class="container" style="margin-left: 200px; padding: 90px; color: rgb(20, 20, 20);">
+  <div> 
+    <img src="../assets/img/logo2.png" alt="" class="container" style="width: 200px;"><br>
+    <h2>Bienvenido </h2>
+  
+  </div>
+</div>
+<body *ngIf="region==''">
+<div *ngIf="region==''" class="container" style="margin-left: 90px;">
     <div class="row">
       <section class="container-fluid">
-        <form id="formulario" class="container" >
+        <form id="formulario" class="container" #frmLoguin="ngForm" (ngSubmit)="singIn(frmLoguin)">
           <img src="../assets/img/logo2.png" alt="" class="container">
           <div class="container py-3">
               
                 <h5 class="entre">Email</h5>
-                <input type="email" [(ngModel)]="orden.nombre" [ngModelOptions]="{standalone: true}" placeholder="E-mail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <input type="email"  placeholder="E-mail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nombre" ngModel required placeholder="Enter email">
                  
                 <h5 class="entre">contraseña</h5>
-                <input class="control form-control"  [(ngModel)]="orden.contrasenia" [ngModelOptions]="{standalone: true}" type="password" name="" id="pass" placeholder="contraseña"><br>
-
-                  <button class="btn btn-dark entre control button form-control" type="submit" (click)="singIn()">Guardar</button> 
+                <input class="control form-control"   type="password" name="contrasenia" ngModel required id="pass" placeholder="contraseña"><br>
+                <div *ngIf="estilo=='advert'" style="color:darkred;">contrasenia/usuario mal autenticado</div>
+                <input class="btn btn-dark entre control button form-control" type="submit" value="Entrar">
+                
+                  <!--button class="btn btn-dark entre control button form-control" type="submit" (click)="singIn()">Guardar</button--> 
                 </div>
           
     

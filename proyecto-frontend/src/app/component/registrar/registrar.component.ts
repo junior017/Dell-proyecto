@@ -42,6 +42,7 @@ export class RegistrarComponent implements OnInit {
       console.log(res);
       //this.ordenes.push(res);
       this.regio = 'acceso';
+      console.log('hola')
       this.regio2 = true;
     });
     
